@@ -1,4 +1,5 @@
-# SistemaDeArquivos-SO
+# Sistema De Arquivos
+
 Sistema de Arquivos criado para a disciplina de Sistemas Operacionais
 
 -> O diretório raiz não guarda o conteúdo do arquivo. Guarda apenas nome, tamanho real, onde o arquivo começa na FAT e outros dados.
