@@ -22,7 +22,7 @@ def executar_fs(fs: str = "furgfs4.fs"):
 
         print(f"{'NOME':<35}  {'TAMANHO OCUPADO NO SISTEMA':<15}  {'TAMANHO REAL'}")
 
-        for i in range(numero_arquivos):
+        for _ in range(numero_arquivos):
             dados = f.read(bytes_por_arquivo)
             if not dados:
                 break
@@ -40,15 +40,5 @@ def executar_fs(fs: str = "furgfs4.fs"):
             elif status == 2:
                 print(f"{AZUL}{nome_str}    {tamanho_arquivo}     {tamanho_arquivo}{RESET}") # deixa o nome das pastas em azul
                 
-
-
-
-            
-
-
-
-
-
-
-
 executar_fs()
+# funções executar cp, rm, etc...
