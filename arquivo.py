@@ -21,5 +21,3 @@ class Arquivo:
             self.protecao,
             self.reservado
         )
-
-# Próximos passos: Ler o bloco de 8192 bytes do diretório raiz do arquivo furgfs4.fs e "fatiar" ele de 64 em 64 bytes para listar os arquivos -> comando ls
