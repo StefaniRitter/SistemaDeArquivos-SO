@@ -26,11 +26,11 @@ class Cabecalho:
         self.inicio_fat = self.tamanho_cabecalho
 
         self.quantidade_blocos = tamanho_sistema // tamanho_bloco
-        self.tamanho_fat_bytes = self.quantidade_blocos * 4 # ajustar os bytes por entrada na FAT
+        self.tamanho_fat_bytes = self.quantidade_blocos * 4 # 4 bytes por entrada na FAT
 
         self.inicio_diretorio_raiz = self.inicio_fat + self.tamanho_fat_bytes
 
-        self.tamanho_diretorio_raiz = self.tamanho_bloco * 2 # o diretório raiz ocupa 2 blocos inteiro
+        self.tamanho_diretorio_raiz = self.tamanho_bloco * 2 # o diretório raiz ocupa 2 blocos inteiros
 
         self.inicio_dados = self.inicio_diretorio_raiz + self.tamanho_diretorio_raiz
 
