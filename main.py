@@ -1,4 +1,5 @@
 from cabecalho import *
+from gerenciador import *
 
 def converteBytes(tamanho):
     try:
@@ -49,7 +50,53 @@ def criar_fs(tamanho_bytes: int, nome: str = "furgfs4.fs"):
         print(f"Erro ao criar arquivo: {e}")
 
           
-tamanho = input("Informe o tamanho do sistema de arquivos (ex: '800 MB'): ")
+'''tamanho = input("Informe o tamanho do sistema de arquivos (ex: '800 MB'): ")
 tamanhoBytes = converteBytes(tamanho)
 if tamanhoBytes:
-    criar_fs(tamanhoBytes)
+    criar_fs(tamanhoBytes)'''
+
+gerenciador = Gerenciador(fs="furgfs4.fs")
+
+# cp <origem>/arquivo <furgfs>/arquivo 
+
+while True:
+    try:
+        entrada = input("furgfs4> ")
+        if not entrada.strip():
+            continue
+            
+        comando = entrada.strip().split(" ")
+
+        if comando[0] == "cp":
+            if len(comando) < 3:
+                print("Uso correto: cp <origem> <destino>")
+                continue
+            caminho_origem = comando[1]
+            caminho_final = comando[2]
+            gerenciador.executar_cp(caminho_origem, caminho_final)
+
+        elif comando[0] == "ls":
+            if len(comando) > 1:
+                caminho = comando[1]
+                gerenciador.executar_ls(caminho)
+            else:
+                gerenciador.executar_ls()
+
+        elif comando[0] == "debug":
+                    nome_arquivo = comando[1]
+                    gerenciador.executar_debug(nome_arquivo)
+
+        elif comando[0] == "mkdir":
+                    nome_arquivo = comando[1]
+                    gerenciador.executar_mkdir(nome_arquivo)
+            
+        elif comando[0] == "exit" or comando[0] == "sair":
+            print("Saindo do FURGfs4...")
+            break
+            
+        else:
+            print(f"Comando '{comando[0]}' não reconhecido.")
+            
+    except KeyboardInterrupt: # se apertas ctrl + c
+        print("\nSaindo do FURGfs4...")
+        break

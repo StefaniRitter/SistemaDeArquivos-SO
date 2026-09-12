@@ -12,3 +12,16 @@ O número do bloco é o próprio índice da FAT, então se for realizada uma bus
 
 -> Blocos: arquivos não dividem blocos com outros arquivos. Se um arquivo for menor que o espaço do bloco, os bytes restantes são desperdiçados. Se o arquivo for maior que o espaço do bloco, vai precisar de mais de um bloco só pra ele.
 
+### OPERAÇÕES IMPLEMENTADAS ATÉ O MOMENTO:
+
+- Criação do sistema de arquivos;
+- Criação e alocação do cabeçalho;
+- Criação da classe Arquivo;
+- Comandos 
+    - ls: listagem de arquivos na pasta atual;
+    - cp externo -> furgfs4,fs: copia arquivos do pc para dentro do furgfs4.fs (cp <caminho_origem> <destino_final>);
+    - mkdir: cria subpasta dentro do diretório atual (mkdir <nome_pasta>);
+    - debug: imprime a sequência de blocos utilizados pelo arquivo (debug <nome_arquivo>);
+- Gerenciamento e Leitura da FAT;
+- Funções secundárias para uso interno.
+- Suporte a diretórios.
