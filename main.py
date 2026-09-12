@@ -49,11 +49,12 @@ def criar_fs(tamanho_bytes: int, nome: str = "furgfs4.fs"):
     except OSError as e:
         print(f"Erro ao criar arquivo: {e}")
 
-          
-'''tamanho = input("Informe o tamanho do sistema de arquivos (ex: '800 MB'): ")
+
+# rodar essa parte só uma vez
+tamanho = input("Informe o tamanho do sistema de arquivos (ex: '800 MB'): ")
 tamanhoBytes = converteBytes(tamanho)
 if tamanhoBytes:
-    criar_fs(tamanhoBytes)'''
+    criar_fs(tamanhoBytes)
 
 gerenciador = Gerenciador(fs="furgfs4.fs")
 
@@ -97,6 +98,6 @@ while True:
         else:
             print(f"Comando '{comando[0]}' não reconhecido.")
             
-    except KeyboardInterrupt: # se apertas ctrl + c
+    except KeyboardInterrupt: # se apertar ctrl + c
         print("\nSaindo do FURGfs4...")
         break
