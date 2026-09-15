@@ -45,7 +45,9 @@ O arquivo furgfs4.fs será criado. Nas próximas execuções, o sistema existent
 - df 
 - protect <nome> 
 - debug <nome> 
-- find <nome> sha256 <nome> exit
+- find <nome>
+- sha256 <nome>
+- exit
 
 ### Exemplo 
 ```
